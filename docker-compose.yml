@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  url-shortener:
+    build: ./urlshortener
+    container_name: "url_shortener"
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./urlshortener:/usr/src/app
+    ports:
+      - "8000:8000"
+
+  
