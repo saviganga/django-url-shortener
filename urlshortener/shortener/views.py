@@ -133,8 +133,8 @@ class URLShortenerViewSet(ReadWriteSerializerMixin, ModelViewSet):
             )
         
         return Response(
-            data=shortener_responses.URLShortenerResponses().resolve_urlshortener_error(shortened_url_object.original_url),
-            status=status.HTTP_400_BAD_REQUEST
+            data=shortener_responses.URLShortenerResponses().resolve_urlshortener_success(shortened_url_object.original_url),
+            status=status.HTTP_200_OK
         )
 
 
