@@ -10,7 +10,7 @@ url shortener api built with Django
 ## Usage
 
 ```
-1. clone the repository at the location: https://github.com/saviganga/django-asynchronous-api
+1. clone the repository at the location: https://github.com/saviganga/django-url-shortener
 
 2. navigate to the root directory (directory with docker-compose.yml file)
 
