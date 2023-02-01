@@ -20,17 +20,16 @@ url shortener api built with Django
 
 5. navigate to 127.0.0.1:8000/urlshortener/shortener/
     - shorten_url: make a POST request with the original url to be shortened. endpoint applies url_shortener algorithm
-
-    ![shorten_url](https://user-images.githubusercontent.com/68572955/215912547-b77c2fc2-cec4-4d6f-bda5-eaaf9ad00e98.jpg)
-
+    field_name: original_url
+    field_value: URLField
+    
     - view_all_urls: make a GET request to view all original and shortened urls
-
-    ![all_urls](https://user-images.githubusercontent.com/68572955/215912686-0f5d0177-cafb-4ea1-8579-6a9c02ea113d.jpg)
 
 6. navigate to 127.0.0.1:8000/urlshortener/shortener/resolve_original_url/
     - resolve_url: make a POST request with the shortened url generataed by the app to get the original url
 
-    ![resolve_url](https://user-images.githubusercontent.com/68572955/215912618-f6e64b59-0cf3-42f7-acaf-b0bff67ee944.jpg)
+    field_name: shortened_url
+    field_value: URLField
     
 ```
 
