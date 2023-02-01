@@ -50,7 +50,13 @@ class URLShortenerViewSet(ReadWriteSerializerMixin, ModelViewSet):
                 data=shortener_responses.URLShortenerResponses().create_urlshortener_error(data=serializer.errors),
                 status=status.HTTP_400_BAD_REQUEST
             )
-        
+
+        try:
+            shortened_url_object = self.queryset.get(original_url=serializer.validated_data.get('original_url'))
+            return Response(data=shortener_responses.URLShortenerResponses().create_urlshortener_success(data={"original_url": shortened_url_object.original_url, "shortened_url": shortened_url_object.shortened_url, "shortened_url_code": shortened_url_object.shortened_url_code},), status=status.HTTP_201_CREATED)
+        except Exception as not_shortened:
+            pass
+
         shortened_url = serializer.create(serializer.validated_data)
 
 
